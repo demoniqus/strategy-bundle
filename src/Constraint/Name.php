@@ -14,6 +14,7 @@ class Name implements ConstraintInterface
     {
         return [
             new NotNull(),
+            // comment
         ];
     }
 
