@@ -13,7 +13,7 @@ class Name implements ConstraintInterface
     public function getConstraints(): array
     {
         return [
-            new NotNull()
+            new NotNull(),
         ];
     }
 
