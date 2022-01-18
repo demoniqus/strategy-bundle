@@ -37,7 +37,7 @@ interface CommandMediatorInterface
      * @return StrategyInterface
      * @throws StrategyCannotBeCreatedException
      */
-    public function onCreate (StrategyApiDtoInterface $dto, StrategyInterface $entity): StrategyInterface;
+    public function onCreate(StrategyApiDtoInterface $dto, StrategyInterface $entity): StrategyInterface;
 //endregion Public
 //region SECTION: Getters/Setters
 

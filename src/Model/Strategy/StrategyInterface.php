@@ -13,9 +13,6 @@ use Evrinoma\UtilsBundle\Entity\IdInterface;
  */
 interface StrategyInterface extends ActiveInterface, CreateUpdateAtInterface, IdInterface
 {
-//region SECTION:Public
-
-//endregion Public
 //region SECTION: Getters/Setters
     /**
      * @return string

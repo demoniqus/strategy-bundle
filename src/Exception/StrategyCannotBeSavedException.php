@@ -4,6 +4,6 @@
 namespace Evrinoma\StrategyBundle\Exception;
 
 
-class StrategyCannotBeSavedException extends \Exception
+final class StrategyCannotBeSavedException extends \Exception
 {
 }

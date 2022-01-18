@@ -32,7 +32,7 @@ final class TypeStrategy extends Callback
 //region SECTION: Private
     private static function getCallback(): \Closure
     {
-        return function($object, ExecutionContextInterface $context, $payload){
+        return function ($object, ExecutionContextInterface $context, $payload) {
             /** @var AbstractStrategyInterface $object */
             $strategyName = $object->getName();
             /** @var StrategyInterface $strategyName */
@@ -41,7 +41,6 @@ final class TypeStrategy extends Callback
                     ->atPath('type')
                     ->addViolation();
             }
-
         };
     }
 //endregion Private

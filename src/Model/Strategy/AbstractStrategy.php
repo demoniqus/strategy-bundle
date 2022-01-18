@@ -19,10 +19,11 @@ use Evrinoma\UtilsBundle\Entity\IdTrait;
 abstract class AbstractStrategy implements StrategyInterface
 {
     use IdTrait, CreateUpdateAtTrait, ActiveTrait;
+
 //region SECTION: Fields
     /**
-     * Полное наименование конкретного класса, реализующего стратегию заданного типа (например, расчет бюджета по сметам или по этапам).
-     * Данный класс должен реализовать интерфейс Interfaces\StrategyInterface
+     * Полное наименование конкретного класса, реализующего стратегию заданного типа (например, расчет бюджета по
+     * сметам или по этапам). Данный класс должен реализовать интерфейс Interfaces\StrategyInterface
      *
      * @var string
      *

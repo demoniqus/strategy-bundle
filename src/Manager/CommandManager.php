@@ -22,9 +22,9 @@ final class CommandManager implements CommandManagerInterface, RestInterface
 
 //region SECTION: Fields
     private StrategyCommandRepositoryInterface $repository;
-    private ValidatorInterface            $validator;
+    private ValidatorInterface                 $validator;
     private StrategyFactoryInterface           $factory;
-    private CommandMediatorInterface      $mediator;
+    private CommandMediatorInterface           $mediator;
 //endregion Fields
 
 //region SECTION: Constructor
@@ -37,16 +37,15 @@ final class CommandManager implements CommandManagerInterface, RestInterface
      * @param CommandMediatorInterface           $mediator
      */
     public function __construct(
-        ValidatorInterface $validator,
+        ValidatorInterface                 $validator,
         StrategyCommandRepositoryInterface $repository,
-        StrategyFactoryInterface $factory,
-        CommandMediatorInterface $mediator
-    )
-    {
-        $this->validator  = $validator;
+        StrategyFactoryInterface           $factory,
+        CommandMediatorInterface           $mediator
+    ) {
+        $this->validator = $validator;
         $this->repository = $repository;
-        $this->factory    = $factory;
-        $this->mediator   = $mediator;
+        $this->factory = $factory;
+        $this->mediator = $mediator;
     }
 //endregion Constructor
 
@@ -59,11 +58,11 @@ final class CommandManager implements CommandManagerInterface, RestInterface
      */
     public function post(StrategyApiDtoInterface $dto): StrategyInterface
     {
-        $project = $this->factory->create($dto);
+        $strategy = $this->factory->create($dto);
 
-        $this->mediator->onCreate($dto, $project);
+        $this->mediator->onCreate($dto, $strategy);
 
-        $errors = $this->validator->validate($project);
+        $errors = $this->validator->validate($strategy);
 
         if (count($errors) > 0) {
 
@@ -72,9 +71,9 @@ final class CommandManager implements CommandManagerInterface, RestInterface
             throw new StrategyInvalidException($errorsString);
         }
 
-        $this->repository->save($project);
+        $this->repository->save($strategy);
 
-        return $project;
+        return $strategy;
     }
 
     /**
@@ -87,24 +86,21 @@ final class CommandManager implements CommandManagerInterface, RestInterface
     public function put(StrategyApiDtoInterface $dto): StrategyInterface
     {
         try {
-            $project = $this->repository->find($dto->getId());
+            $strategy = $this->repository->find($dto->getId());
         } catch (StrategyNotFoundException $e) {
             throw $e;
         }
 
-        $project
-            ->setDateStart(new \DateTimeImmutable($dto->getStart()))
-            ->setDateFinish(new \DateTimeImmutable($dto->getFinish()))
+        $strategy
             ->setName($dto->getName())
-            ->setDescription($dto->getDescription())
+            ->setType($dto->getType())
             ->setUpdatedAt(new \DateTimeImmutable())
-            ->setActive($dto->getActive())
-            ;
+            ->setActive($dto->getActive());
 
 
-        $this->mediator->onUpdate($dto, $project);
+        $this->mediator->onUpdate($dto, $strategy);
 
-        $errors = $this->validator->validate($project);
+        $errors = $this->validator->validate($strategy);
 
         if (count($errors) > 0) {
 
@@ -113,9 +109,9 @@ final class CommandManager implements CommandManagerInterface, RestInterface
             throw new StrategyInvalidException($errorsString);
         }
 
-        $this->repository->save($project);
+        $this->repository->save($strategy);
 
-        return $project;
+        return $strategy;
     }
 
     /**
@@ -127,13 +123,13 @@ final class CommandManager implements CommandManagerInterface, RestInterface
     public function delete(StrategyApiDtoInterface $dto): void
     {
         try {
-            $project = $this->repository->find($dto->getId());
+            $strategy = $this->repository->find($dto->getId());
         } catch (StrategyNotFoundException $e) {
             throw $e;
         }
-        $this->mediator->onDelete($dto, $project);
+        $this->mediator->onDelete($dto, $strategy);
         try {
-            $this->repository->remove($project);
+            $this->repository->remove($strategy);
         } catch (StrategyCannotBeRemovedException $e) {
             throw $e;
         }

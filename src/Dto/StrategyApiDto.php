@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 class StrategyApiDto extends AbstractDto implements StrategyApiDtoInterface
 {
     use IdTrait, ActiveTrait, NameTrait;
+
 //region SECTION: Fields
     private string $type;
 //endregion Fields
@@ -59,10 +60,10 @@ class StrategyApiDto extends AbstractDto implements StrategyApiDtoInterface
         $class = $request->get(DtoInterface::DTO_CLASS);
 
         if ($class === $this->getClass()) {
-            $id         = $request->get(ModelInterface::ID);
-            $name       = $request->get(ModelInterface::NAME);
-            $active     = $request->get(ModelInterface::ACTIVE);
-            $type     = $request->get(ModelInterface::TYPE);
+            $id     = $request->get(ModelInterface::ID);
+            $name   = $request->get(ModelInterface::NAME);
+            $active = $request->get(ModelInterface::ACTIVE);
+            $type   = $request->get(ModelInterface::TYPE);
 
             if ($active) {
                 $this->setActive($active);

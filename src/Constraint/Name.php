@@ -18,7 +18,8 @@ class Name implements ConstraintInterface
         ];
     }
 
-    public function getPropertyName(): string{
+    public function getPropertyName(): string
+    {
         return 'name';
     }
 //endregion Getters/Setters

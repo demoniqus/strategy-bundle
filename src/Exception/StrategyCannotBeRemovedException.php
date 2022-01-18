@@ -4,6 +4,6 @@
 namespace Evrinoma\StrategyBundle\Exception;
 
 
-class StrategyCannotBeRemovedException extends \Exception
+final class StrategyCannotBeRemovedException extends \Exception
 {
 }

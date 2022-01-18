@@ -4,7 +4,6 @@
 namespace Evrinoma\StrategyBundle\Repository;
 
 
-
 use Doctrine\ORM\Exception\ORMException;
 use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
 use Evrinoma\StrategyBundle\Exception\StrategyNotFoundException;
@@ -29,7 +28,7 @@ interface StrategyQueryRepositoryInterface
      * @return StrategyInterface
      * @throws StrategyNotFoundException
      */
-    public function find($id, $lockMode = null, $lockVersion = null):StrategyInterface;
+    public function find($id, $lockMode = null, $lockVersion = null): StrategyInterface;
 
     /**
      * @param string $id

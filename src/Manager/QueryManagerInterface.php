@@ -26,6 +26,7 @@ interface QueryManagerInterface
      * @throws StrategyNotFoundException
      */
     public function get(StrategyApiDtoInterface $dto): StrategyInterface;
+
     /**
      * @param StrategyApiDtoInterface $dto
      *

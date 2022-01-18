@@ -35,12 +35,12 @@ final class QueryManager implements QueryManagerInterface, RestInterface
     public function criteria(StrategyApiDtoInterface $dto): array
     {
         try {
-            $project = $this->repository->findByCriteria($dto);
+            $strategy = $this->repository->findByCriteria($dto);
         } catch (StrategyNotFoundException $e) {
             throw $e;
         }
 
-        return $project;
+        return $strategy;
     }
 
     /**
@@ -53,15 +53,16 @@ final class QueryManager implements QueryManagerInterface, RestInterface
     {
         try {
             if ($dto->hasId()) {
-                $project = $this->repository->proxy($dto->getId());
-            } else {
+                $strategy = $this->repository->proxy($dto->getId());
+            }
+            else {
                 throw new StrategyProxyException("Id value is not set while trying get proxy object");
             }
         } catch (StrategyProxyException $e) {
             throw $e;
         }
 
-        return $project;
+        return $strategy;
     }
 //endregion Public
 
@@ -80,12 +81,12 @@ final class QueryManager implements QueryManagerInterface, RestInterface
     public function get(StrategyApiDtoInterface $dto): StrategyInterface
     {
         try {
-            $project = $this->repository->find($dto->getId());
+            $strategy = $this->repository->find($dto->getId());
         } catch (StrategyNotFoundException $e) {
             throw $e;
         }
 
-        return $project;
+        return $strategy;
     }
 //endregion Getters/Setters
 }

@@ -16,14 +16,6 @@ class QueryMediator extends AbstractQueryMediator implements QueryMediatorInterf
     protected static string $alias = AliasInterface::STRATEGY;
 //endregion Fields
 
-//region SECTION: Constructor
-
-//endregion Constructor
-
-//region SECTION: Protected
-
-//endregion Protected
-
 //region SECTION: Public
     /**
      * @param DtoInterface $dto
@@ -38,31 +30,27 @@ class QueryMediator extends AbstractQueryMediator implements QueryMediatorInterf
         /** @var $dto StrategyApiDtoInterface */
         if ($dto->hasId()) {
             $builder
-                ->andWhere($alias.'.id = :id')
+                ->andWhere($alias . '.id = :id')
                 ->setParameter('id', $dto->getId());
         }
 
         if ($dto->hasType()) {
             $builder
-                ->andWhere($alias.'.type = :type')
+                ->andWhere($alias . '.type = :type')
                 ->setParameter('type', $dto->getType());
         }
 
         if ($dto->hasName()) {
             $builder
-                ->andWhere($alias.'.name = :name')
+                ->andWhere($alias . '.name = :name')
                 ->setParameter('name', $dto->getName());
         }
 
         if ($dto->hasActive()) {
             $builder
-                ->andWhere($alias.'.active = :active')
+                ->andWhere($alias . '.active = :active')
                 ->setParameter('active', $dto->getActive());
         }
     }
 //endregion Public
-
-//region SECTION: Getters/Setters
-
-//endregion Getters/Setters
 }

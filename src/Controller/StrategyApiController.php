@@ -40,14 +40,13 @@ final class StrategyApiController extends AbstractApiController implements ApiCo
     private FactoryDtoInterface $factoryDto;
 
     public function __construct(
-        SerializerInterface $serializer,
-        RequestStack $requestStack,
-        FactoryDtoInterface $factoryDto,
+        SerializerInterface     $serializer,
+        RequestStack            $requestStack,
+        FactoryDtoInterface     $factoryDto,
         CommandManagerInterface $commandManager,
-        QueryManagerInterface $queryManager,
-        string $dtoClass
-    )
-    {
+        QueryManagerInterface   $queryManager,
+        string                  $dtoClass
+    ) {
         parent::__construct($serializer);
         $this->request = $requestStack->getCurrentRequest();
         $this->factoryDto = $factoryDto;

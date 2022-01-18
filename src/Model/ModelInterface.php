@@ -11,6 +11,5 @@ interface ModelInterface
     public const NAME   = 'name';
     public const ACTIVE = 'active';
     public const TYPE   = 'type';
-
 //endregion Fields
 }

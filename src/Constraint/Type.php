@@ -19,7 +19,8 @@ class Type implements ConstraintInterface
         ];
     }
 
-    public function getPropertyName(): string{
+    public function getPropertyName(): string
+    {
         return 'type';
     }
 //endregion Getters/Setters
