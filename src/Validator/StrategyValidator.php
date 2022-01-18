@@ -1,5 +1,7 @@
 <?php
 
+namespace Evrinoma\StrategyBundle\Validator;
+
 
 use Evrinoma\StrategyBundle\Entity\Strategy\BaseStrategy;
 use Evrinoma\UtilsBundle\Validator\AbstractValidator;
@@ -7,7 +9,7 @@ use Evrinoma\UtilsBundle\Validator\AbstractValidator;
 class StrategyValidator extends AbstractValidator
 {
 //region SECTION: Fields
-    protected static  ?string $entityClass = BaseStrategy::class;
+    protected static ?string $entityClass = BaseStrategy::class;
 //endregion Fields
 
 //region SECTION: Constructor
