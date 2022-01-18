@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Factory;
+namespace Evrinoma\StrategyBundle\Factory;
 
 
-use App\Strategy\Bundle\Dto\StrategyApiDtoInterface;
-use App\Strategy\Bundle\Model\Strategy\StrategyInterface;
+use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
+use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface;
 
 
 interface StrategyFactoryInterface

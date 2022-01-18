@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Dto;
+namespace Evrinoma\StrategyBundle\Dto;
 
 
-use App\Strategy\Bundle\Model\ModelInterface as BaseModel;
-use App\Strategy\Model\ModelInterface;
+use Evrinoma\StrategyBundle\Model\ModelInterface as BaseModel;
+use Evrinoma\StrategyBundle\Model\ModelInterface;
 use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\DtoBundle\Dto\AbstractDto;
 use Evrinoma\DtoCommon\ValueObject\ActiveTrait;

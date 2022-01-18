@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Constraints;
+namespace Evrinoma\StrategyBundle\Constraints;
 
 
 

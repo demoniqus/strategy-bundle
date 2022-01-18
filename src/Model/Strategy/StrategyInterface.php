@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Model\Strategy;
+namespace Evrinoma\StrategyBundle\Model\Strategy;
 
 
 use Evrinoma\UtilsBundle\Entity\ActiveInterface;

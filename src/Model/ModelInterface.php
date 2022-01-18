@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Model;
+namespace Evrinoma\StrategyBundle\Model;
 
 
 interface ModelInterface

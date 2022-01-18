@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Model\Strategy;
+namespace Evrinoma\StrategyBundle\Model\Strategy;
 
 use Doctrine\ORM\Mapping as ORM;
 use Evrinoma\UtilsBundle\Entity\ActiveTrait;

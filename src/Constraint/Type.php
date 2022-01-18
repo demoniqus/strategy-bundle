@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Constraint;
+namespace Evrinoma\StrategyBundle\Constraint;
 
 
-use App\Strategy\Bundle\Constraints\TypeStrategy;
+use Evrinoma\StrategyBundle\Constraints\TypeStrategy;
 use Evrinoma\UtilsBundle\Constraint\ConstraintInterface;
 use Symfony\Component\Validator\Constraints\NotNull;
 
