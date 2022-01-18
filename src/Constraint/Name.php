@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Constraint;
+namespace Demoniqus\Bundle\Constraint;
 
 
 use Evrinoma\UtilsBundle\Constraint\ConstraintInterface;
@@ -14,6 +14,7 @@ class Name implements ConstraintInterface
     {
         return [
             new NotNull(),
+            // comment
         ];
     }
 
