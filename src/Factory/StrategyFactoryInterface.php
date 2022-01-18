@@ -13,7 +13,4 @@ interface StrategyFactoryInterface
 //region SECTION:Public
     public function create(StrategyApiDtoInterface $dto): StrategyInterface;
 //endregion Public
-//region SECTION: Getters/Setters
-
-//endregion Getters/Setters
 }

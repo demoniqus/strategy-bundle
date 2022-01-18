@@ -21,10 +21,6 @@ class StrategyFactory implements StrategyFactoryInterface
     }
 //endregion Constructor
 
-//region SECTION: Protected
-
-//endregion Protected
-
 //region SECTION: Public
     public function create(StrategyApiDtoInterface $dto): StrategyInterface
     {
@@ -41,8 +37,4 @@ class StrategyFactory implements StrategyFactoryInterface
         return $strategy;
     }
 //endregion Public
-
-//region SECTION: Getters/Setters
-
-//endregion Getters/Setters
 }

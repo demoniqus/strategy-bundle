@@ -4,13 +4,12 @@
 namespace Evrinoma\StrategyBundle\Dto;
 
 
-use Evrinoma\StrategyBundle\Model\ModelInterface as BaseModel;
-use Evrinoma\StrategyBundle\Model\ModelInterface;
 use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\DtoBundle\Dto\AbstractDto;
 use Evrinoma\DtoCommon\ValueObject\ActiveTrait;
 use Evrinoma\DtoCommon\ValueObject\IdTrait;
 use Evrinoma\DtoCommon\ValueObject\NameTrait;
+use Evrinoma\StrategyBundle\Model\ModelInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class StrategyApiDto extends AbstractDto implements StrategyApiDtoInterface
@@ -60,11 +59,10 @@ class StrategyApiDto extends AbstractDto implements StrategyApiDtoInterface
         $class = $request->get(DtoInterface::DTO_CLASS);
 
         if ($class === $this->getClass()) {
-            $id         = $request->get(BaseModel::ID);
-            $name       = $request->get(BaseModel::NAME);
-            $active     = $request->get(BaseModel::ACTIVE);
-            $type     = $request->get(BaseModel::TYPE);
-
+            $id         = $request->get(ModelInterface::ID);
+            $name       = $request->get(ModelInterface::NAME);
+            $active     = $request->get(ModelInterface::ACTIVE);
+            $type     = $request->get(ModelInterface::TYPE);
 
             if ($active) {
                 $this->setActive($active);

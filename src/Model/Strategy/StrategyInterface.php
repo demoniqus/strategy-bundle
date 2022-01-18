@@ -8,6 +8,9 @@ use Evrinoma\UtilsBundle\Entity\ActiveInterface;
 use Evrinoma\UtilsBundle\Entity\CreateUpdateAtInterface;
 use Evrinoma\UtilsBundle\Entity\IdInterface;
 
+/**
+ * Strategy as database record
+ */
 interface StrategyInterface extends ActiveInterface, CreateUpdateAtInterface, IdInterface
 {
 //region SECTION:Public

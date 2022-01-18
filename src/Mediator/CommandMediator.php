@@ -10,18 +10,6 @@ use Evrinoma\UtilsBundle\Mediator\AbstractCommandMediator;
 
 class CommandMediator extends AbstractCommandMediator implements CommandMediatorInterface
 {
-//region SECTION: Fields
-
-//endregion Fields
-
-//region SECTION: Constructor
-
-//endregion Constructor
-
-//region SECTION: Protected
-
-//endregion Protected
-
 //region SECTION: Public
     public function onUpdate(DtoInterface $dto, $entity): StrategyInterface
     {
@@ -38,8 +26,4 @@ class CommandMediator extends AbstractCommandMediator implements CommandMediator
         return $entity;
     }
 //endregion Public
-
-//region SECTION: Getters/Setters
-
-//endregion Getters/Setters
 }

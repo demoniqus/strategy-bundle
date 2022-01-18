@@ -21,12 +21,17 @@ abstract class AbstractStrategy implements StrategyInterface
     use IdTrait, CreateUpdateAtTrait, ActiveTrait;
 //region SECTION: Fields
     /**
+     * Полное наименование конкретного класса, реализующего стратегию заданного типа (например, расчет бюджета по сметам или по этапам).
+     * Данный класс должен реализовать интерфейс Interfaces\StrategyInterface
+     *
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     protected string $name;
     /**
+     * Тип стратегии (например, стратегия расчета бюджета, стратегия формирования номера сметы)
+     *
      * @var string
      *
      * @ORM\Column(name="type", type="string", length=255, nullable=true)
