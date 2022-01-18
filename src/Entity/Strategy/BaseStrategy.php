@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Entity\Strategy;
+namespace Evrinoma\StrategyBundle\Entity\Strategy;
 
 
-use App\Strategy\Bundle\Model\Strategy\AbstractStrategy;
+use Evrinoma\StrategyBundle\Model\Strategy\AbstractStrategy;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

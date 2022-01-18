@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Mediator;
+namespace Evrinoma\StrategyBundle\Mediator;
 
 
-use App\Strategy\Bundle\Model\Strategy\StrategyInterface;
+use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface;
 use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\UtilsBundle\Mediator\AbstractCommandMediator;
 

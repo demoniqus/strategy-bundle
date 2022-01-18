@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Exception;
+namespace Evrinoma\StrategyBundle\Exception;
 
 
 class StrategyCannotBeRemovedException extends \Exception

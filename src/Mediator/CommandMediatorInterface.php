@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Mediator;
+namespace Evrinoma\StrategyBundle\Mediator;
 
-use App\Strategy\Bundle\Dto\StrategyApiDtoInterface;
-use App\Strategy\Bundle\Exception\StrategyCannotBeCreatedException;
-use App\Strategy\Bundle\Exception\StrategyCannotBeRemovedException;
-use App\Strategy\Bundle\Exception\StrategyCannotBeSavedException;
-use App\Strategy\Bundle\Model\Strategy\StrategyInterface;
+use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
+use Evrinoma\StrategyBundle\Exception\StrategyCannotBeCreatedException;
+use Evrinoma\StrategyBundle\Exception\StrategyCannotBeRemovedException;
+use Evrinoma\StrategyBundle\Exception\StrategyCannotBeSavedException;
+use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface;
 
 
 interface CommandMediatorInterface

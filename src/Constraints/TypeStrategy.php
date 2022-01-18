@@ -1,15 +1,12 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Constraints;
+namespace Evrinoma\StrategyBundle\Constraints;
 
 
-use App\Strategy\Bundle\Constraints\Exception\UnexpectedStrategyTypeException;
-use App\Strategy\Entity\AbstractStrategyInterface;
-use App\Strategy\Entity\Strategy;
+use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface as AbstractStrategyInterface;
 
-use App\Strategy\Interfaces\StrategyInterface;
-use Symfony\Component\Validator\Constraint;
+use Evrinoma\StrategyBundle\Interfaces\StrategyInterface;
 use Symfony\Component\Validator\Constraints\Callback;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 

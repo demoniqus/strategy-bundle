@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Constraints\Exception;
+namespace Evrinoma\StrategyBundle\Constraints\Exception;
 
 
 use Symfony\Component\Validator\Exception\ValidatorException;

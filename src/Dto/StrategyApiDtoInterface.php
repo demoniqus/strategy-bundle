@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Dto;
+namespace Evrinoma\StrategyBundle\Dto;
 
 
 use Evrinoma\DtoBundle\Dto\DtoInterface;

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Repository;
+namespace Evrinoma\StrategyBundle\Repository;
 
 
 interface AliasInterface

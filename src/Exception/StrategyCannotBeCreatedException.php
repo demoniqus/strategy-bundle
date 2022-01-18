@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Strategy\Bundle\Exception;
+namespace Evrinoma\StrategyBundle\Exception;
 
 
 class StrategyCannotBeCreatedException extends \Exception
