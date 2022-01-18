@@ -218,7 +218,7 @@ final class StrategyApiController extends AbstractApiController implements ApiCo
             $json = $this->setRestStatus($this->commandManager, $e);
         }
 
-        return $this->json(['message' => 'Delete project', 'data' => $json], $this->commandManager->getRestStatus());
+        return $this->json(['message' => 'Delete strategy', 'data' => $json], $this->commandManager->getRestStatus());
     }
 
     /**
