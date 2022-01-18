@@ -1,0 +1,5 @@
+services:
+  evrinoma.strategy.constraint.name:
+    class: Evrinoma\StrategyBundle\Constraint\Name
+  evrinoma.strategy.constraint.type:
+    class: Evrinoma\StrategyBundle\Constraint\Type

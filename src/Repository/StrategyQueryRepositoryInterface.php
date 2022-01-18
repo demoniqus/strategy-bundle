@@ -4,12 +4,39 @@
 namespace Evrinoma\StrategyBundle\Repository;
 
 
+
+use Doctrine\ORM\Exception\ORMException;
+use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
+use Evrinoma\StrategyBundle\Exception\StrategyNotFoundException;
+use Evrinoma\StrategyBundle\Exception\StrategyProxyException;
+use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface;
+
 interface StrategyQueryRepositoryInterface
 {
-//region SECTION:Public
+    /**
+     * @param StrategyApiDtoInterface $dto
+     *
+     * @return array
+     * @throws StrategyNotFoundException
+     */
+    public function findByCriteria(StrategyApiDtoInterface $dto): array;
 
-//endregion Public
-//region SECTION: Getters/Setters
+    /**
+     * @param      $id
+     * @param null $lockMode
+     * @param null $lockVersion
+     *
+     * @return StrategyInterface
+     * @throws StrategyNotFoundException
+     */
+    public function find($id, $lockMode = null, $lockVersion = null):StrategyInterface;
 
-//endregion Getters/Setters
+    /**
+     * @param string $id
+     *
+     * @return StrategyInterface
+     * @throws StrategyProxyException
+     * @throws ORMException
+     */
+    public function proxy(string $id): StrategyInterface;
 }

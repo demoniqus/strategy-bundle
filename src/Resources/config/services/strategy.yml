@@ -1,0 +1,67 @@
+services:
+  Evrinoma\StrategyBundle\Controller\StrategyApiController:
+    alias: evrinoma.strategy.api.controller
+    public: true
+
+  evrinoma.strategy.api.controller:
+    class: Evrinoma\StrategyBundle\Controller\StrategyApiController
+    arguments:
+      - '@jms_serializer'
+      - '@request_stack'
+      - '@evrinoma.dto.factory'
+      - '@evrinoma.strategy.command.manager'
+      - '@evrinoma.strategy.query.manager'
+    autowire: true
+
+  evrinoma.strategy.factory:
+    class: Evrinoma\StrategyBundle\Factory\StrategyFactory
+    public: true
+    arguments:
+
+  evrinoma.strategy.repository:
+    class: Evrinoma\StrategyBundle\Repository\StrategyRepository
+    public: true
+    arguments:
+
+  evrinoma.strategy.command.manager:
+    class: Evrinoma\StrategyBundle\Manager\CommandManager
+    arguments:
+      - '@evrinoma.strategy.validator'
+      - '@evrinoma.strategy.repository'
+      - '@evrinoma.strategy.factory'
+      - '@evrinoma.strategy.command.mediator'
+
+  evrinoma.strategy.query.manager:
+    class: Evrinoma\StrategyBundle\Manager\QueryManager
+    arguments:
+      - '@evrinoma.strategy.repository'
+
+  evrinoma.strategy.validator:
+    class: Evrinoma\StrategyBundle\Validator\StrategyValidator
+    public: true
+    arguments:
+
+  Evrinoma\StrategyBundle\Validator\StrategyValidator:
+    alias: evrinoma.strategy.validator
+
+  evrinoma.strategy.query.mediator:
+    class: Evrinoma\StrategyBundle\Mediator\QueryMediator
+    public: true
+    arguments:
+
+  Evrinoma\StrategyBundle\Mediator\QueryMediator:
+    alias: evrinoma.strategy.query.mediator
+
+  Evrinoma\StrategyBundle\Mediator\QueryMediatorInterface:
+    alias: evrinoma.strategy.query.mediator
+
+  evrinoma.strategy.command.mediator:
+    class: Evrinoma\StrategyBundle\Mediator\CommandMediator
+    public: true
+    arguments:
+
+  Evrinoma\StrategyBundle\Mediator\CommandMediator:
+    alias: evrinoma.strategy.command.mediator
+
+  Evrinoma\StrategyBundle\Mediator\CommandMediatorInterface:
+    alias: evrinoma.strategy.command.mediator

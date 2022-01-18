@@ -1,0 +1,3 @@
+fcr_api:
+  resource: "@EvrinomaStrategyBundle/Controller/StrategyApiController.php"
+  type: annotation

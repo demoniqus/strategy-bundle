@@ -4,12 +4,6 @@
 namespace Evrinoma\StrategyBundle\Repository;
 
 
-interface StrategyRepositoryInterface
+interface StrategyRepositoryInterface extends StrategyQueryRepositoryInterface, StrategyCommandRepositoryInterface
 {
-//region SECTION:Public
-
-//endregion Public
-//region SECTION: Getters/Setters
-
-//endregion Getters/Setters
 }
