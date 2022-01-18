@@ -1,0 +1,23 @@
+Evrinoma\StrategyBundle\Model\Strategy\AbstractStrategy:
+  exclusion_policy: ALL
+  properties:
+    id:
+      groups: [ api_get_strategy, api_post_strategy, api_put_strategy ]
+      expose: true
+    createdAt:
+      type: DateTimeImmutable<'Y-m-d H:i'>
+      groups: [ api_get_strategy, api_post_strategy, api_put_strategy  ]
+    updatedAt:
+      type: DateTimeImmutable<'Y-m-d H:i'>
+      groups: [ api_get_strategy, api_post_strategy, api_put_strategy ]
+    active:
+      groups: [ api_get_strategy, api_post_strategy, api_put_strategy ]
+      expose: true
+    name:
+      groups: [ api_get_strategy, api_post_strategy, api_put_strategy ]
+      expose: true
+    type:
+      groups: [ api_get_strategy, api_post_strategy, api_put_strategy ]
+      expose: true
+
+

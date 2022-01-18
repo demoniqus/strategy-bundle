@@ -1,18 +1,7 @@
 ###> phpstorm
 .idea/
-.run/
-
-###> symfony/framework-bundle ###
-/src/.preload.php
-/var/
 /vendor/
 
-###> symfony/phpunit-bridge ###
-.phpunit
-.phpunit.result.cache
-/phpunit.xml
+
 ###< symfony/phpunit-bridge ###
-
-/node_modules/
-
 composer.lock

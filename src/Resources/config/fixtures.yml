@@ -1,0 +1,5 @@
+services:
+  evrinoma.strategy.fixtures.strategy:
+    class: Evrinoma\StrategyBundle\Fixtures\StrategyFixtures
+    tags:
+      - { name: doctrine.fixture.orm }
