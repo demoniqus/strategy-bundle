@@ -78,7 +78,7 @@ final class StrategyApiController extends AbstractApiController implements ApiCo
      *         )
      *     )
      * )
-     * @OA\Response(response=200,description="Create project")
+     * @OA\Response(response=200,description="Create strategy")
      *
      * @return JsonResponse
      */
@@ -122,7 +122,7 @@ final class StrategyApiController extends AbstractApiController implements ApiCo
      *                  "type":"sumCalculationStrategy",
      *                  },
      *               type="object",
-     *               @OA\Property(property="class",type="string",default="Evrinoma\ProjectBundle\Dto\ProjectApiDto"),
+     *               @OA\Property(property="class",type="string",default="Evrinoma\StrategyBundle\Dto\StrategyApiDto"),
      *               @OA\Property(property="name",type="string"),
      *               @OA\Property(property="type",type="string"),
      *               @OA\Property(property="active",type="string")
@@ -187,7 +187,7 @@ final class StrategyApiController extends AbstractApiController implements ApiCo
      *         )
      *     )
      * )
-     * @OA\Response(response=200,description="Delete project")
+     * @OA\Response(response=200,description="Delete strategy")
      *
      * @return JsonResponse
      */
@@ -290,7 +290,7 @@ final class StrategyApiController extends AbstractApiController implements ApiCo
      *         required=true,
      *         @OA\Schema(
      *           type="string",
-     *           default="Evrinoma\ProjectBundle\Dto\ProjectApiDto",
+     *           default="Evrinoma\StrategyBundle\Dto\StrategyApiDto",
      *           readOnly=true
      *         )
      *     ),
@@ -305,7 +305,7 @@ final class StrategyApiController extends AbstractApiController implements ApiCo
      *         )
      *     )
      * )
-     * @OA\Response(response=200,description="Return project")
+     * @OA\Response(response=200,description="Return strategy")
      *
      * @return JsonResponse
      */
