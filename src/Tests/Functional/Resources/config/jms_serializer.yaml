@@ -1,6 +1,6 @@
 jms_serializer:
   metadata:
     directories:
-      ProjectBundle:
-        namespace_prefix: "Evrinoma\\ProjectBundle"
-        path: '%kernel.root_dir%/Resources/config/serializer/ProjectBundle'
+      StrategyBundle:
+        namespace_prefix: "Evrinoma\\StrategyBundle"
+        path: '%kernel.root_dir%/Resources/config/serializer/StrategyBundle'

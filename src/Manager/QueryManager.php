@@ -34,13 +34,7 @@ final class QueryManager implements QueryManagerInterface, RestInterface
      */
     public function criteria(StrategyApiDtoInterface $dto): array
     {
-        try {
-            $strategy = $this->repository->findByCriteria($dto);
-        } catch (StrategyNotFoundException $e) {
-            throw $e;
-        }
-
-        return $strategy;
+        return $this->repository->findByCriteria($dto);
     }
 
     /**

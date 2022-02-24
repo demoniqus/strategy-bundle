@@ -4,7 +4,8 @@
 namespace Evrinoma\StrategyBundle\Constraint;
 
 
-use Evrinoma\UtilsBundle\Constraint\ConstraintInterface;
+
+use Evrinoma\UtilsBundle\Constraint\Property\ConstraintInterface;
 use Symfony\Component\Validator\Constraints\NotNull;
 
 class Name implements ConstraintInterface

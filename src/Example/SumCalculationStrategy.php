@@ -1,6 +1,6 @@
 <?php
 
-namespace Evrinoma\Example;
+namespace Evrinoma\StrategyBundle\Example;
 
 use Evrinoma\StrategyBundle\Interfaces\StrategyInterface;
 
