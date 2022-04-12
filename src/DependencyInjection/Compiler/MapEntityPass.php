@@ -26,10 +26,16 @@ class MapEntityPass extends AbstractMapEntity implements CompilerPassInterface
 
         $this->cleanMetadata($driver, [DemoniqusStrategyExtension::ENTITY]);
 
-        $entity = $container->getParameter(DemoniqusStrategyBundle::VENDOR_PREFIX . '.strategy.entity');
+        $entity = $container->getParameter(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . DemoniqusStrategyBundle::STRATEGY_LC . '.entity');
         if ((strpos($entity, DemoniqusStrategyExtension::ENTITY) !== false)) {
-            $this->loadMetadata($driver, $referenceAnnotationReader, '%s/Model/Strategy', '%s/Entity/Strategy');
-            $this->addResolveTargetEntity([BaseStrategy::class => StrategyInterface::class,], false);
+            $this->loadMetadata(
+                $driver,
+                $referenceAnnotationReader,
+                '%s/Model/' . DemoniqusStrategyBundle::STRATEGY_CC,
+                '%s/Entity/' . DemoniqusStrategyBundle::STRATEGY_CC
+            );
+            $this->addResolveTargetEntity(
+                [$entity => [StrategyInterface::class => [],],], false);
         }
     }
 //endregion Public

@@ -15,7 +15,7 @@ use Psr\Container\ContainerInterface;
 final class ApiControllerTest extends AbstractFunctionalTest
 {
 //region SECTION: Fields
-    protected string $actionServiceName = DemoniqusStrategyBundle::VENDOR_PREFIX . '.strategy.test.functional.action.strategy';
+    protected string $actionServiceName = DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . DemoniqusStrategyBundle::STRATEGY_LC . '.test.functional.action.' . DemoniqusStrategyBundle::STRATEGY_LC;
 //endregion Fields
 
 //region SECTION: Protected

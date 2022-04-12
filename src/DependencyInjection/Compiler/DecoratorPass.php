@@ -14,16 +14,16 @@ class DecoratorPass extends AbstractRecursivePass
      */
     public function process(ContainerBuilder $container)
     {
-        $decoratorQuery = $container->getParameter(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . DemoniqusStrategyBundle::STRATEGY_BUNDLE . '.decorates.query');
+        $decoratorQuery = $container->getParameter(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . DemoniqusStrategyBundle::STRATEGY_LC . '.decorates.query');
         if ($decoratorQuery) {
             $queryMediator = $container->getDefinition($decoratorQuery);
-            $repository = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . DemoniqusStrategyBundle::STRATEGY_BUNDLE . '.repository');
+            $repository = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . DemoniqusStrategyBundle::STRATEGY_LC . '.repository');
             $repository->setArgument(2, $queryMediator);
         }
-        $decoratorCommand = $container->getParameter(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . DemoniqusStrategyBundle::STRATEGY_BUNDLE . '.decorates.command');
+        $decoratorCommand = $container->getParameter(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . DemoniqusStrategyBundle::STRATEGY_LC . '.decorates.command');
         if ($decoratorCommand) {
             $commandMediator = $container->getDefinition($decoratorCommand);
-            $commandManager = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . DemoniqusStrategyBundle::STRATEGY_BUNDLE . '.command.manager');
+            $commandManager = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . DemoniqusStrategyBundle::STRATEGY_LC . '.command.manager');
             $commandManager->setArgument(3, $commandMediator);
         }
     }

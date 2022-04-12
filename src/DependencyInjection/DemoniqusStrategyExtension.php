@@ -5,6 +5,8 @@ namespace Demoniqus\StrategyBundle\DependencyInjection;
 use Demoniqus\StrategyBundle\DependencyInjection\Compiler\Constraint\StrategyPass;
 use Demoniqus\StrategyBundle\Dto\StrategyApiDto;
 use Demoniqus\StrategyBundle\DemoniqusStrategyBundle;
+use Demoniqus\StrategyBundle\Entity\Strategy\BaseStrategy;
+use Demoniqus\StrategyBundle\Factory\StrategyFactory;
 use Evrinoma\UtilsBundle\DependencyInjection\HelperTrait;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Alias;
@@ -18,9 +20,9 @@ final class DemoniqusStrategyExtension extends Extension
 {
     use HelperTrait;
 //region SECTION: Fields
-    public const ENTITY         = 'Demoniqus\StrategyBundle\Entity';
-    public const ENTITY_FACTORY = 'Demoniqus\StrategyBundle\Factory\StrategyFactory';
-    public const ENTITY_BASE    = self::ENTITY.'\Strategy\BaseStrategy';
+    public const ENTITY         = DemoniqusStrategyBundle::VENDOR_PREFIX_CC . '\\' . DemoniqusStrategyBundle::STRATEGY_BUNDLE_CC . '\Entity';
+    public const ENTITY_FACTORY = StrategyFactory::class;
+    public const ENTITY_BASE    = BaseStrategy::class;
     public const DTO_BASE       = StrategyApiDto::class;
 
     /**
@@ -163,7 +165,7 @@ final class DemoniqusStrategyExtension extends Extension
 //region SECTION: Getters/Setters
     public function getAlias()
     {
-        return DemoniqusStrategyBundle::STRATEGY_BUNDLE;
+        return DemoniqusStrategyBundle::STRATEGY_LC;
     }
 //endregion Getters/Setters
 }

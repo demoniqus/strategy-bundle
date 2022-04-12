@@ -13,8 +13,13 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 class DemoniqusStrategyBundle extends Bundle
 {
 //region SECTION: Fields
-    public const STRATEGY_BUNDLE = 'strategy';
+    public const STRATEGY_LC = 'strategy';
+    public const STRATEGY_CC = 'Strategy';
+    public const STRATEGY_BUNDLE_CC = 'StrategyBundle';
+
     public const VENDOR_PREFIX = 'demoniqus';
+    public const VENDOR_PREFIX_CC = 'Demoniqus';
+
 //endregion Fields
 
 //region SECTION: Constructor

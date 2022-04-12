@@ -15,7 +15,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder      = new TreeBuilder(DemoniqusStrategyBundle::STRATEGY_BUNDLE);
+        $treeBuilder      = new TreeBuilder(DemoniqusStrategyBundle::STRATEGY_LC);
         $rootNode         = $treeBuilder->getRootNode();
         $supportedDrivers = ['orm'];
 

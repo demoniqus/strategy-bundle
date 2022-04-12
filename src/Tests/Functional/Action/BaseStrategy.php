@@ -19,7 +19,7 @@ class BaseStrategy extends AbstractServiceTest implements BaseStrategyTestInterf
     use BaseStrategyTestTrait;
 
 //region SECTION: Fields
-    private const API_PREFIX = DemoniqusStrategyBundle::VENDOR_PREFIX . '/api/' . DemoniqusStrategyBundle::STRATEGY_BUNDLE;
+    private const API_PREFIX = DemoniqusStrategyBundle::VENDOR_PREFIX . '/api/' . DemoniqusStrategyBundle::STRATEGY_LC;
     public const API_GET      = self::API_PREFIX;
     public const API_CRITERIA = self::API_PREFIX . '/criteria';
     public const API_DELETE   = self::API_PREFIX . '/delete';
