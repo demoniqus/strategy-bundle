@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Mediator;
+namespace Demoniqus\StrategyBundle\Mediator;
 
-use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
-use Evrinoma\StrategyBundle\Exception\StrategyCannotBeCreatedException;
-use Evrinoma\StrategyBundle\Exception\StrategyCannotBeRemovedException;
-use Evrinoma\StrategyBundle\Exception\StrategyCannotBeSavedException;
-use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface;
+use Demoniqus\StrategyBundle\Dto\StrategyApiDtoInterface;
+use Demoniqus\StrategyBundle\Exception\StrategyCannotBeCreatedException;
+use Demoniqus\StrategyBundle\Exception\StrategyCannotBeRemovedException;
+use Demoniqus\StrategyBundle\Exception\StrategyCannotBeSavedException;
+use Demoniqus\StrategyBundle\Model\Strategy\StrategyInterface;
 
 
 interface CommandMediatorInterface

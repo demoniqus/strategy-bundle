@@ -1,17 +1,17 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\Fixtures;
+namespace Demoniqus\StrategyBundle\Fixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Bundle\FixturesBundle\FixtureGroupInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
-use Evrinoma\StrategyBundle\Entity\Strategy\BaseStrategy;
-use Evrinoma\StrategyBundle\Fixtures\Strategies\BudgetCalcByEstimateStrategy;
-use Evrinoma\StrategyBundle\Fixtures\Strategies\BudgetCalcByStageStrategy;
-use Evrinoma\StrategyBundle\Fixtures\Strategies\DashedEstimateGenNumberStrategy;
-use Evrinoma\StrategyBundle\Fixtures\Strategies\DotedEstimateGenNumberStrategy;
-use Evrinoma\StrategyBundle\Fixtures\Strategies\SlashedEstimateGenNumberStrategy;
+use Demoniqus\StrategyBundle\Entity\Strategy\BaseStrategy;
+use Demoniqus\StrategyBundle\Fixtures\Strategies\BudgetCalcByEstimateStrategy;
+use Demoniqus\StrategyBundle\Fixtures\Strategies\BudgetCalcByStageStrategy;
+use Demoniqus\StrategyBundle\Fixtures\Strategies\DashedEstimateGenNumberStrategy;
+use Demoniqus\StrategyBundle\Fixtures\Strategies\DotedEstimateGenNumberStrategy;
+use Demoniqus\StrategyBundle\Fixtures\Strategies\SlashedEstimateGenNumberStrategy;
 
 class StrategyFixtures extends Fixture implements OrderedFixtureInterface, FixtureGroupInterface
 {

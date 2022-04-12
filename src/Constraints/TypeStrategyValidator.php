@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Constraints;
+namespace Demoniqus\StrategyBundle\Constraints;
 
 
 use Symfony\Component\Validator\Constraint;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\Tests\Functional;
+namespace Demoniqus\StrategyBundle\Tests\Functional;
 
 use Evrinoma\TestUtilsBundle\Kernel\AbstractApiKernel;
 
@@ -20,7 +20,7 @@ class Kernel extends AbstractApiKernel
      */
     public function registerBundles()
     {
-        return array_merge(parent::registerBundles(), [new \Evrinoma\DtoBundle\EvrinomaDtoBundle(), new \Evrinoma\StrategyBundle\EvrinomaStrategyBundle()]);
+        return array_merge(parent::registerBundles(), [new \Evrinoma\DtoBundle\EvrinomaDtoBundle(), new \Demoniqus\StrategyBundle\DemoniqusStrategyBundle()]);
     }
 
     protected function getBundleConfig(): array

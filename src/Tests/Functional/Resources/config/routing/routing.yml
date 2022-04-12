@@ -1,2 +1,2 @@
 project:
-    resource: "@EvrinomaStrategyBundle/Resources/config/routes.yml"
+    resource: "@DemoniqusStrategyBundle/Resources/config/routes.yml"

@@ -2,5 +2,5 @@ jms_serializer:
   metadata:
     directories:
       StrategyBundle:
-        namespace_prefix: "Evrinoma\\StrategyBundle"
+        namespace_prefix: "Demoniqus\\StrategyBundle"
         path: '%kernel.root_dir%/Resources/config/serializer/StrategyBundle'

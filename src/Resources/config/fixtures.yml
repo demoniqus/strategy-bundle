@@ -1,5 +1,5 @@
 services:
-  evrinoma.strategy.fixtures.strategy:
-    class: Evrinoma\StrategyBundle\Fixtures\StrategyFixtures
+  demoniqus.strategy.fixtures.strategy:
+    class: Demoniqus\StrategyBundle\Fixtures\StrategyFixtures
     tags:
       - { name: doctrine.fixture.orm }

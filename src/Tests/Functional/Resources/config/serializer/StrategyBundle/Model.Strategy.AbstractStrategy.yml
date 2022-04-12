@@ -1,4 +1,4 @@
-Evrinoma\StrategyBundle\Model\Strategy\AbstractStrategy:
+Demoniqus\StrategyBundle\Model\Strategy\AbstractStrategy:
   exclusion_policy: ALL
   properties:
     id:

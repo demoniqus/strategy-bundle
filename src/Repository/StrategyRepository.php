@@ -1,19 +1,19 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Repository;
+namespace Demoniqus\StrategyBundle\Repository;
 
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\ORMException;
 use Doctrine\ORM\ORMInvalidArgumentException;
 use Doctrine\Persistence\ManagerRegistry;
-use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
-use Evrinoma\StrategyBundle\Exception\StrategyCannotBeSavedException;
-use Evrinoma\StrategyBundle\Exception\StrategyNotFoundException;
-use Evrinoma\StrategyBundle\Exception\StrategyProxyException;
-use Evrinoma\StrategyBundle\Mediator\QueryMediatorInterface;
-use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface;
+use Demoniqus\StrategyBundle\Dto\StrategyApiDtoInterface;
+use Demoniqus\StrategyBundle\Exception\StrategyCannotBeSavedException;
+use Demoniqus\StrategyBundle\Exception\StrategyNotFoundException;
+use Demoniqus\StrategyBundle\Exception\StrategyProxyException;
+use Demoniqus\StrategyBundle\Mediator\QueryMediatorInterface;
+use Demoniqus\StrategyBundle\Model\Strategy\StrategyInterface;
 
 class StrategyRepository extends ServiceEntityRepository implements StrategyRepositoryInterface
 {

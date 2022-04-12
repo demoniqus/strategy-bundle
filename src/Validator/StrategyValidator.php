@@ -1,9 +1,9 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\Validator;
+namespace Demoniqus\StrategyBundle\Validator;
 
 
-use Evrinoma\StrategyBundle\Entity\Strategy\BaseStrategy;
+use Demoniqus\StrategyBundle\Entity\Strategy\BaseStrategy;
 use Evrinoma\UtilsBundle\Validator\AbstractValidator;
 
 class StrategyValidator extends AbstractValidator

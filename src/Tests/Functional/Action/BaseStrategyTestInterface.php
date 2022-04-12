@@ -1,6 +1,6 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\Tests\Functional\Action;
+namespace Demoniqus\StrategyBundle\Tests\Functional\Action;
 
 interface BaseStrategyTestInterface
 {

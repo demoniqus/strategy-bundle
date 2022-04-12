@@ -1,17 +1,17 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\Manager;
+namespace Demoniqus\StrategyBundle\Manager;
 
-use Evrinoma\StrategyBundle\Exception\StrategyCannotBeCreatedException;
-use Evrinoma\StrategyBundle\Exception\StrategyCannotBeRemovedException;
-use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
-use Evrinoma\StrategyBundle\Exception\StrategyCannotBeSavedException;
-use Evrinoma\StrategyBundle\Exception\StrategyInvalidException;
-use Evrinoma\StrategyBundle\Exception\StrategyNotFoundException;
-use Evrinoma\StrategyBundle\Factory\StrategyFactoryInterface;
-use Evrinoma\StrategyBundle\Mediator\CommandMediatorInterface;
-use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface;
-use Evrinoma\StrategyBundle\Repository\StrategyCommandRepositoryInterface;
+use Demoniqus\StrategyBundle\Exception\StrategyCannotBeCreatedException;
+use Demoniqus\StrategyBundle\Exception\StrategyCannotBeRemovedException;
+use Demoniqus\StrategyBundle\Dto\StrategyApiDtoInterface;
+use Demoniqus\StrategyBundle\Exception\StrategyCannotBeSavedException;
+use Demoniqus\StrategyBundle\Exception\StrategyInvalidException;
+use Demoniqus\StrategyBundle\Exception\StrategyNotFoundException;
+use Demoniqus\StrategyBundle\Factory\StrategyFactoryInterface;
+use Demoniqus\StrategyBundle\Mediator\CommandMediatorInterface;
+use Demoniqus\StrategyBundle\Model\Strategy\StrategyInterface;
+use Demoniqus\StrategyBundle\Repository\StrategyCommandRepositoryInterface;
 use Evrinoma\UtilsBundle\Rest\RestInterface;
 use Evrinoma\UtilsBundle\Rest\RestTrait;
 use Evrinoma\UtilsBundle\Validator\ValidatorInterface;

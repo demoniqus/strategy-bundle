@@ -1,9 +1,10 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\Tests\Functional\Controller;
+namespace Demoniqus\StrategyBundle\Tests\Functional\Controller;
 
 
-use Evrinoma\StrategyBundle\Fixtures\FixtureInterface;
+use Demoniqus\StrategyBundle\DemoniqusStrategyBundle;
+use Demoniqus\StrategyBundle\Fixtures\FixtureInterface;
 use Evrinoma\TestUtilsBundle\Action\ActionTestInterface;
 use Evrinoma\TestUtilsBundle\Functional\AbstractFunctionalTest;
 use Psr\Container\ContainerInterface;
@@ -14,7 +15,7 @@ use Psr\Container\ContainerInterface;
 final class ApiControllerTest extends AbstractFunctionalTest
 {
 //region SECTION: Fields
-    protected string $actionServiceName = 'evrinoma.strategy.test.functional.action.strategy';
+    protected string $actionServiceName = DemoniqusStrategyBundle::VENDOR_PREFIX . '.strategy.test.functional.action.strategy';
 //endregion Fields
 
 //region SECTION: Protected

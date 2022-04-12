@@ -1,5 +1,5 @@
 services:
-  evrinoma.strategy.object_manager:
+  demoniqus.strategy.object_manager:
     class:  Doctrine\Persistence\ObjectManager
     public: false
-    arguments: ['%evrinoma.strategy.model_manager_name%']
+    arguments: ['%demoniqus.strategy.model_manager_name%']

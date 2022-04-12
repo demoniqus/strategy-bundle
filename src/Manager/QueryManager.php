@@ -1,12 +1,12 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\Manager;
+namespace Demoniqus\StrategyBundle\Manager;
 
-use Evrinoma\StrategyBundle\Exception\StrategyProxyException;
-use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
-use Evrinoma\StrategyBundle\Exception\StrategyNotFoundException;
-use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface;
-use Evrinoma\StrategyBundle\Repository\StrategyQueryRepositoryInterface;
+use Demoniqus\StrategyBundle\Exception\StrategyProxyException;
+use Demoniqus\StrategyBundle\Dto\StrategyApiDtoInterface;
+use Demoniqus\StrategyBundle\Exception\StrategyNotFoundException;
+use Demoniqus\StrategyBundle\Model\Strategy\StrategyInterface;
+use Demoniqus\StrategyBundle\Repository\StrategyQueryRepositoryInterface;
 use Evrinoma\UtilsBundle\Rest\RestInterface;
 use Evrinoma\UtilsBundle\Rest\RestTrait;
 

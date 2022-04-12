@@ -1,8 +1,8 @@
 <?php
 
-namespace Evrinoma\Example;
+namespace Demoniqus\StrategyBundle\Example;
 
-use Evrinoma\StrategyBundle\Interfaces\StrategyInterface;
+use Demoniqus\StrategyBundle\Interfaces\StrategyInterface;
 
 final class SumCalculationStrategy implements StrategyInterface
 {

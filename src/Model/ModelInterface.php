@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Model;
+namespace Demoniqus\StrategyBundle\Model;
 
 
 interface ModelInterface

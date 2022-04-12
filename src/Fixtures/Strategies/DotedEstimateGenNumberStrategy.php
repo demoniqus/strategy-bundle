@@ -1,10 +1,10 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\Fixtures\Strategies;
+namespace Demoniqus\StrategyBundle\Fixtures\Strategies;
 
 
-use Evrinoma\StrategyBundle\Fixtures\Model\TypeModelInterface;
-use Evrinoma\StrategyBundle\Interfaces\StrategyInterface;
+use Demoniqus\StrategyBundle\Fixtures\Model\TypeModelInterface;
+use Demoniqus\StrategyBundle\Interfaces\StrategyInterface;
 
 final class DotedEstimateGenNumberStrategy implements StrategyInterface
 {

@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Factory;
+namespace Demoniqus\StrategyBundle\Factory;
 
 
-use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
-use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface;
+use Demoniqus\StrategyBundle\Dto\StrategyApiDtoInterface;
+use Demoniqus\StrategyBundle\Model\Strategy\StrategyInterface;
 
 
 interface StrategyFactoryInterface

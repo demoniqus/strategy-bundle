@@ -1,3 +1,3 @@
-fcr_api:
-  resource: "@EvrinomaStrategyBundle/Controller/StrategyApiController.php"
+strategy_api:
+  resource: "@DemoniqusStrategyBundle/Controller/StrategyApiController.php"
   type: annotation

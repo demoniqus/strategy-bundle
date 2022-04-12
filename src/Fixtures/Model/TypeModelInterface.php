@@ -1,6 +1,6 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\Fixtures\Model;
+namespace Demoniqus\StrategyBundle\Fixtures\Model;
 
 
 interface TypeModelInterface

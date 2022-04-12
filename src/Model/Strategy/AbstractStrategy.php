@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Model\Strategy;
+namespace Demoniqus\StrategyBundle\Model\Strategy;
 
 use Doctrine\ORM\Mapping as ORM;
 use Evrinoma\UtilsBundle\Entity\ActiveTrait;

@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Constraints;
+namespace Demoniqus\StrategyBundle\Constraints;
 
 
-use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface as AbstractStrategyInterface;
+use Demoniqus\StrategyBundle\Model\Strategy\StrategyInterface as AbstractStrategyInterface;
 
-use Evrinoma\StrategyBundle\Interfaces\StrategyInterface;
+use Demoniqus\StrategyBundle\Interfaces\StrategyInterface;
 use Symfony\Component\Validator\Constraints\Callback;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 

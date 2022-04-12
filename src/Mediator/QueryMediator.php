@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Mediator;
+namespace Demoniqus\StrategyBundle\Mediator;
 
 
-use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
-use Evrinoma\StrategyBundle\Repository\AliasInterface;
+use Demoniqus\StrategyBundle\Dto\StrategyApiDtoInterface;
+use Demoniqus\StrategyBundle\Repository\AliasInterface;
 use Doctrine\ORM\QueryBuilder;
 use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\UtilsBundle\Mediator\AbstractQueryMediator;

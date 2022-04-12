@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Dto;
+namespace Demoniqus\StrategyBundle\Dto;
 
 
 use Evrinoma\DtoBundle\Dto\DtoInterface;
@@ -9,7 +9,7 @@ use Evrinoma\DtoBundle\Dto\AbstractDto;
 use Evrinoma\DtoCommon\ValueObject\ActiveTrait;
 use Evrinoma\DtoCommon\ValueObject\IdTrait;
 use Evrinoma\DtoCommon\ValueObject\NameTrait;
-use Evrinoma\StrategyBundle\Model\ModelInterface;
+use Demoniqus\StrategyBundle\Model\ModelInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class StrategyApiDto extends AbstractDto implements StrategyApiDtoInterface

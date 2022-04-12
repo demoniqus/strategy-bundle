@@ -1,14 +1,14 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\Tests\Functional\Action;
+namespace Demoniqus\StrategyBundle\Tests\Functional\Action;
 
 
-use Evrinoma\StrategyBundle\Dto\StrategyApiDto;
-use Evrinoma\StrategyBundle\Fixtures\Strategies\BudgetCalcByStageStrategy;
-use Evrinoma\StrategyBundle\Fixtures\Strategies\DashedEstimateGenNumberStrategy;
-use Evrinoma\StrategyBundle\Tests\Functional\Helper\BaseStrategyTestTrait;
-use Evrinoma\StrategyBundle\EvrinomaStrategyBundle;
-use Evrinoma\StrategyBundle\Fixtures\Strategies\SlashedEstimateGenNumberStrategy;
+use Demoniqus\StrategyBundle\Dto\StrategyApiDto;
+use Demoniqus\StrategyBundle\Fixtures\Strategies\BudgetCalcByStageStrategy;
+use Demoniqus\StrategyBundle\Fixtures\Strategies\DashedEstimateGenNumberStrategy;
+use Demoniqus\StrategyBundle\Tests\Functional\Helper\BaseStrategyTestTrait;
+use Demoniqus\StrategyBundle\DemoniqusStrategyBundle;
+use Demoniqus\StrategyBundle\Fixtures\Strategies\SlashedEstimateGenNumberStrategy;
 use Evrinoma\TestUtilsBundle\Action\AbstractServiceTest;
 use Evrinoma\UtilsBundle\Model\ActiveModel;
 use PHPUnit\Framework\Assert;
@@ -19,7 +19,7 @@ class BaseStrategy extends AbstractServiceTest implements BaseStrategyTestInterf
     use BaseStrategyTestTrait;
 
 //region SECTION: Fields
-    private const API_PREFIX = EvrinomaStrategyBundle::VENDOR_PREFIX . '/api/' . EvrinomaStrategyBundle::STRATEGY_BUNDLE;
+    private const API_PREFIX = DemoniqusStrategyBundle::VENDOR_PREFIX . '/api/' . DemoniqusStrategyBundle::STRATEGY_BUNDLE;
     public const API_GET      = self::API_PREFIX;
     public const API_CRITERIA = self::API_PREFIX . '/criteria';
     public const API_DELETE   = self::API_PREFIX . '/delete';

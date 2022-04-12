@@ -1,6 +1,6 @@
 {
   "name": "demoniqus/strategy-bundle",
-  "description": "Project",
+  "description": "Strategy",
   "keywords": [
     "Strategy"
   ],
@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Evrinoma\\StrategyBundle\\": "src/"
+      "Demoniqus\\StrategyBundle\\": "src/"
     },
     "exclude-from-classmap": [
       "/Tests/",

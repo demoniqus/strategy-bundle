@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Dto\Preserve;
+namespace Demoniqus\StrategyBundle\Dto\Preserve;
 
 
 interface StrategyApiDtoInterface

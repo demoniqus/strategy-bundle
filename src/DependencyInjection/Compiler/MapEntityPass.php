@@ -1,11 +1,11 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\DependencyInjection\Compiler;
+namespace Demoniqus\StrategyBundle\DependencyInjection\Compiler;
 
-use Evrinoma\StrategyBundle\DependencyInjection\EvrinomaStrategyExtension;
-use Evrinoma\StrategyBundle\Entity\Strategy\BaseStrategy;
-use Evrinoma\StrategyBundle\EvrinomaStrategyBundle;
-use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface;
+use Demoniqus\StrategyBundle\DependencyInjection\DemoniqusStrategyExtension;
+use Demoniqus\StrategyBundle\Entity\Strategy\BaseStrategy;
+use Demoniqus\StrategyBundle\DemoniqusStrategyBundle;
+use Demoniqus\StrategyBundle\Model\Strategy\StrategyInterface;
 use Evrinoma\UtilsBundle\DependencyInjection\Compiler\AbstractMapEntity;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -24,10 +24,10 @@ class MapEntityPass extends AbstractMapEntity implements CompilerPassInterface
         $driver                    = $container->findDefinition('doctrine.orm.default_metadata_driver');
         $referenceAnnotationReader = new Reference('annotations.reader');
 
-        $this->cleanMetadata($driver, [EvrinomaStrategyExtension::ENTITY]);
+        $this->cleanMetadata($driver, [DemoniqusStrategyExtension::ENTITY]);
 
-        $entity = $container->getParameter(EvrinomaStrategyBundle::VENDOR_PREFIX . '.strategy.entity');
-        if ((strpos($entity, EvrinomaStrategyExtension::ENTITY) !== false)) {
+        $entity = $container->getParameter(DemoniqusStrategyBundle::VENDOR_PREFIX . '.strategy.entity');
+        if ((strpos($entity, DemoniqusStrategyExtension::ENTITY) !== false)) {
             $this->loadMetadata($driver, $referenceAnnotationReader, '%s/Model/Strategy', '%s/Entity/Strategy');
             $this->addResolveTargetEntity([BaseStrategy::class => StrategyInterface::class,], false);
         }

@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Mediator;
+namespace Demoniqus\StrategyBundle\Mediator;
 
-use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
+use Demoniqus\StrategyBundle\Dto\StrategyApiDtoInterface;
 use Doctrine\ORM\QueryBuilder;
 
 

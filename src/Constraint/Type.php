@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Constraint;
+namespace Demoniqus\StrategyBundle\Constraint;
 
 
-use Evrinoma\StrategyBundle\Constraints\TypeStrategy;
+use Demoniqus\StrategyBundle\Constraints\TypeStrategy;
 use Evrinoma\UtilsBundle\Constraint\ConstraintInterface;
 use Symfony\Component\Validator\Constraints\NotNull;
 

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Entity\Strategy;
+namespace Demoniqus\StrategyBundle\Entity\Strategy;
 
 
-use Evrinoma\StrategyBundle\Model\Strategy\AbstractStrategy;
+use Demoniqus\StrategyBundle\Model\Strategy\AbstractStrategy;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

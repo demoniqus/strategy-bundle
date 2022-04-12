@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Constraints\Exception;
+namespace Demoniqus\StrategyBundle\Constraints\Exception;
 
 
 use Symfony\Component\Validator\Exception\ValidatorException;

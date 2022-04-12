@@ -3,12 +3,12 @@
 
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Evrinoma\DtoBundle\Factory\FactoryDtoInterface;
-use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
-use Evrinoma\StrategyBundle\Exception\StrategyCannotBeSavedException;
-use Evrinoma\StrategyBundle\Exception\StrategyInvalidException;
-use Evrinoma\StrategyBundle\Exception\StrategyNotFoundException;
-use Evrinoma\StrategyBundle\Manager\CommandManagerInterface;
-use Evrinoma\StrategyBundle\Manager\QueryManagerInterface;
+use Demoniqus\StrategyBundle\Dto\StrategyApiDtoInterface;
+use Demoniqus\StrategyBundle\Exception\StrategyCannotBeSavedException;
+use Demoniqus\StrategyBundle\Exception\StrategyInvalidException;
+use Demoniqus\StrategyBundle\Exception\StrategyNotFoundException;
+use Demoniqus\StrategyBundle\Manager\CommandManagerInterface;
+use Demoniqus\StrategyBundle\Manager\QueryManagerInterface;
 use Evrinoma\UtilsBundle\Controller\AbstractApiController;
 use Evrinoma\UtilsBundle\Controller\ApiControllerInterface;
 use Evrinoma\UtilsBundle\Rest\RestInterface;
@@ -65,12 +65,12 @@ final class StrategyApiController extends AbstractApiController implements ApiCo
      *             mediaType="application/json",
      *             @OA\Schema(
      *               example={
-     *                  "class": "Evrinoma\StrategyBundle\Dto\StrategyApiDto",
+     *                  "class": "Demoniqus\StrategyBundle\Dto\StrategyApiDto",
      *                  "type":"sumCalculationStrategy",
-     *                  "name":"Evrinoma\StrategyBundle\Example\SumCalculationStrategy"
+     *                  "name":"Demoniqus\StrategyBundle\Example\SumCalculationStrategy"
      *                  },
      *               type="object",
-     *               @OA\Property(property="class",type="string",default="Evrinoma\StrategyBundle\Dto\StrategyApiDto"),
+     *               @OA\Property(property="class",type="string",default="Demoniqus\StrategyBundle\Dto\StrategyApiDto"),
      *               @OA\Property(property="id",type="string"),
      *               @OA\Property(property="name",type="string"),
      *               @OA\Property(property="type",type="string"),
@@ -115,14 +115,14 @@ final class StrategyApiController extends AbstractApiController implements ApiCo
      *             mediaType="application/json",
      *             @OA\Schema(
      *               example={
-     *                  "class":"Evrinoma\StrategyBundle\Dto\StrategyApiDto",
+     *                  "class":"Demoniqus\StrategyBundle\Dto\StrategyApiDto",
      *                  "id":"1",
      *                  "active": "a",
-     *                  "name":"Evrinoma\StrategyBundle\Example\SumCalculationStrategy",
+     *                  "name":"Demoniqus\StrategyBundle\Example\SumCalculationStrategy",
      *                  "type":"sumCalculationStrategy",
      *                  },
      *               type="object",
-     *               @OA\Property(property="class",type="string",default="Evrinoma\StrategyBundle\Dto\StrategyApiDto"),
+     *               @OA\Property(property="class",type="string",default="Demoniqus\StrategyBundle\Dto\StrategyApiDto"),
      *               @OA\Property(property="name",type="string"),
      *               @OA\Property(property="type",type="string"),
      *               @OA\Property(property="active",type="string")
@@ -172,7 +172,7 @@ final class StrategyApiController extends AbstractApiController implements ApiCo
      *         required=true,
      *         @OA\Schema(
      *           type="string",
-     *           default="Evrinoma\StrategyBundle\Dto\StrategyApiDto",
+     *           default="Demoniqus\StrategyBundle\Dto\StrategyApiDto",
      *           readOnly=true
      *         )
      *     ),
@@ -232,7 +232,7 @@ final class StrategyApiController extends AbstractApiController implements ApiCo
      *         required=true,
      *         @OA\Schema(
      *           type="string",
-     *           default="Evrinoma\StrategyBundle\Dto\StrategyApiDto",
+     *           default="Demoniqus\StrategyBundle\Dto\StrategyApiDto",
      *           readOnly=true
      *         )
      *     ),
@@ -290,7 +290,7 @@ final class StrategyApiController extends AbstractApiController implements ApiCo
      *         required=true,
      *         @OA\Schema(
      *           type="string",
-     *           default="Evrinoma\StrategyBundle\Dto\StrategyApiDto",
+     *           default="Demoniqus\StrategyBundle\Dto\StrategyApiDto",
      *           readOnly=true
      *         )
      *     ),

@@ -1,6 +1,6 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\Fixtures;
+namespace Demoniqus\StrategyBundle\Fixtures;
 
 interface FixtureInterface
 {

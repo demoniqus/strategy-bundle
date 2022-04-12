@@ -1,9 +1,9 @@
 services:
-  evrinoma.strategy.test.functional.action.strategy:
-    class: Evrinoma\StrategyBundle\Tests\Functional\Action\BaseStrategy
+  demoniqus.strategy.test.functional.action.strategy:
+    class: Demoniqus\StrategyBundle\Tests\Functional\Action\BaseStrategy
     public: true
     arguments:
 
-  Evrinoma\StrategyBundle\Tests\Functional\Action\BaseStrategy:
-    alias: evrinoma.strategy.test.functional.action.strategy
+  Demoniqus\StrategyBundle\Tests\Functional\Action\BaseStrategy:
+    alias: demoniqus.strategy.test.functional.action.strategy
     public: true

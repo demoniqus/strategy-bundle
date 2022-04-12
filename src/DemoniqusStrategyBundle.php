@@ -1,20 +1,20 @@
 <?php
 
-namespace Evrinoma\StrategyBundle;
+namespace Demoniqus\StrategyBundle;
 
 
-use Evrinoma\StrategyBundle\DependencyInjection\Compiler\Constraint\StrategyPass;
-use Evrinoma\StrategyBundle\DependencyInjection\Compiler\DecoratorPass;
-use Evrinoma\StrategyBundle\DependencyInjection\Compiler\MapEntityPass;
-use Evrinoma\StrategyBundle\DependencyInjection\EvrinomaStrategyExtension;
+use Demoniqus\StrategyBundle\DependencyInjection\Compiler\Constraint\StrategyPass;
+use Demoniqus\StrategyBundle\DependencyInjection\Compiler\DecoratorPass;
+use Demoniqus\StrategyBundle\DependencyInjection\Compiler\MapEntityPass;
+use Demoniqus\StrategyBundle\DependencyInjection\DemoniqusStrategyExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class EvrinomaStrategyBundle extends Bundle
+class DemoniqusStrategyBundle extends Bundle
 {
 //region SECTION: Fields
     public const STRATEGY_BUNDLE = 'strategy';
-    public const VENDOR_PREFIX = 'evrinoma';
+    public const VENDOR_PREFIX = 'demoniqus';
 //endregion Fields
 
 //region SECTION: Constructor
@@ -40,7 +40,7 @@ class EvrinomaStrategyBundle extends Bundle
 //region SECTION: Getters/Setters
     public function getContainerExtension()
     {
-        return $this->extension ?? ($this->extension = new EvrinomaStrategyExtension());
+        return $this->extension ?? ($this->extension = new DemoniqusStrategyExtension());
     }
 //endregion Getters/Setters
 }

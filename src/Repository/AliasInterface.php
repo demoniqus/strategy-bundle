@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Repository;
+namespace Demoniqus\StrategyBundle\Repository;
 
 
 interface AliasInterface

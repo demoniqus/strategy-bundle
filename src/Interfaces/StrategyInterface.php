@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Interfaces;
+namespace Demoniqus\StrategyBundle\Interfaces;
 
 /**
  * Strategy as concrete realization (AbstractStrategy::name)

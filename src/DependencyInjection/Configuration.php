@@ -1,9 +1,9 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\DependencyInjection;
+namespace Demoniqus\StrategyBundle\DependencyInjection;
 
 
-use Evrinoma\StrategyBundle\EvrinomaStrategyBundle;
+use Demoniqus\StrategyBundle\DemoniqusStrategyBundle;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -15,7 +15,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder      = new TreeBuilder(EvrinomaStrategyBundle::STRATEGY_BUNDLE);
+        $treeBuilder      = new TreeBuilder(DemoniqusStrategyBundle::STRATEGY_BUNDLE);
         $rootNode         = $treeBuilder->getRootNode();
         $supportedDrivers = ['orm'];
 
@@ -30,10 +30,10 @@ class Configuration implements ConfigurationInterface
             ->cannotBeOverwritten()
             ->defaultValue('orm')
             ->end()
-            ->scalarNode('factory')->cannotBeEmpty()->defaultValue(EvrinomaStrategyExtension::ENTITY_FACTORY)->end()
-            ->scalarNode('entity')->cannotBeEmpty()->defaultValue(EvrinomaStrategyExtension::ENTITY_BASE)->end()
+            ->scalarNode('factory')->cannotBeEmpty()->defaultValue(DemoniqusStrategyExtension::ENTITY_FACTORY)->end()
+            ->scalarNode('entity')->cannotBeEmpty()->defaultValue(DemoniqusStrategyExtension::ENTITY_BASE)->end()
             ->scalarNode('constraints')->defaultTrue()->info('This option is used for enable/disable basic strategy constraints')->end()
-            ->scalarNode('dto')->cannotBeEmpty()->defaultValue(EvrinomaStrategyExtension::DTO_BASE)->info('This option is used for dto class override')->end()
+            ->scalarNode('dto')->cannotBeEmpty()->defaultValue(DemoniqusStrategyExtension::DTO_BASE)->info('This option is used for dto class override')->end()
             ->arrayNode('decorates')->addDefaultsIfNotSet()->children()
             ->scalarNode('command')->defaultNull()->info('This option is used for command strategy decoration')->end()
             ->scalarNode('query')->defaultNull()->info('This option is used for query strategy decoration')->end()

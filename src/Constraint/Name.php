@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Evrinoma\StrategyBundle\Constraint;
+namespace Demoniqus\StrategyBundle\Constraint;
 
 
 use Evrinoma\UtilsBundle\Constraint\ConstraintInterface;

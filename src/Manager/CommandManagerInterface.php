@@ -1,12 +1,12 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\Manager;
+namespace Demoniqus\StrategyBundle\Manager;
 
-use Evrinoma\StrategyBundle\Dto\StrategyApiDtoInterface;
-use Evrinoma\StrategyBundle\Exception\StrategyCannotBeRemovedException;
-use Evrinoma\StrategyBundle\Exception\StrategyInvalidException;
-use Evrinoma\StrategyBundle\Exception\StrategyNotFoundException;
-use Evrinoma\StrategyBundle\Model\Strategy\StrategyInterface;
+use Demoniqus\StrategyBundle\Dto\StrategyApiDtoInterface;
+use Demoniqus\StrategyBundle\Exception\StrategyCannotBeRemovedException;
+use Demoniqus\StrategyBundle\Exception\StrategyInvalidException;
+use Demoniqus\StrategyBundle\Exception\StrategyNotFoundException;
+use Demoniqus\StrategyBundle\Model\Strategy\StrategyInterface;
 
 interface CommandManagerInterface
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Evrinoma\StrategyBundle\DependencyInjection;
+namespace Demoniqus\StrategyBundle\DependencyInjection;
 
-use Evrinoma\StrategyBundle\DependencyInjection\Compiler\Constraint\StrategyPass;
-use Evrinoma\StrategyBundle\Dto\StrategyApiDto;
-use Evrinoma\StrategyBundle\EvrinomaStrategyBundle;
+use Demoniqus\StrategyBundle\DependencyInjection\Compiler\Constraint\StrategyPass;
+use Demoniqus\StrategyBundle\Dto\StrategyApiDto;
+use Demoniqus\StrategyBundle\DemoniqusStrategyBundle;
 use Evrinoma\UtilsBundle\DependencyInjection\HelperTrait;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Alias;
@@ -14,12 +14,12 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
 
-final class EvrinomaStrategyExtension extends Extension
+final class DemoniqusStrategyExtension extends Extension
 {
     use HelperTrait;
 //region SECTION: Fields
-    public const ENTITY         = 'Evrinoma\StrategyBundle\Entity';
-    public const ENTITY_FACTORY = 'Evrinoma\StrategyBundle\Factory\StrategyFactory';
+    public const ENTITY         = 'Demoniqus\StrategyBundle\Entity';
+    public const ENTITY_FACTORY = 'Demoniqus\StrategyBundle\Factory\StrategyFactory';
     public const ENTITY_BASE    = self::ENTITY.'\Strategy\BaseStrategy';
     public const DTO_BASE       = StrategyApiDto::class;
 
@@ -54,7 +54,7 @@ final class EvrinomaStrategyExtension extends Extension
         if ($config['factory'] !== self::ENTITY_FACTORY) {
             $this->wireFactory($container, $config['factory'], $config['entity']);
         } else {
-            $definitionFactory = $container->getDefinition(EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.factory');
+            $definitionFactory = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.factory');
             $definitionFactory->setArgument(0, $config['entity']);
         }
 
@@ -63,12 +63,12 @@ final class EvrinomaStrategyExtension extends Extension
         if (isset(self::$doctrineDrivers[$config['db_driver']])) {
             $loader->load('doctrine.yml');
             $container->setAlias(
-                EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.doctrine_registry',
+                DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.doctrine_registry',
                 new Alias(self::$doctrineDrivers[$config['db_driver']]['registry'], false)
             );
-            $doctrineRegistry = new Reference(EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.doctrine_registry');
-            $container->setParameter(EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.backend_type_'.$config['db_driver'], true);
-            $objectManager = $container->getDefinition(EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.object_manager');
+            $doctrineRegistry = new Reference(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.doctrine_registry');
+            $container->setParameter(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.backend_type_'. $config['db_driver'], true);
+            $objectManager = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.object_manager');
             $objectManager->setFactory([$doctrineRegistry, 'getManager']);
         }
 
@@ -77,8 +77,8 @@ final class EvrinomaStrategyExtension extends Extension
             $config,
             [
                 '' => [
-                    'db_driver' => EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.storage',
-                    'entity'    => EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.entity',
+                    'db_driver' => DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.storage',
+                    'entity'    => DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.entity',
                 ],
             ]
         );
@@ -105,8 +105,8 @@ final class EvrinomaStrategyExtension extends Extension
                 $config['decorates'],
                 [
                     '' => [
-                        'command' => EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.decorates.command',
-                        'query'   => EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.decorates.query',
+                        'command' => DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.decorates.command',
+                        'query'   => DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.decorates.query',
                     ],
                 ]
             );
@@ -131,8 +131,8 @@ final class EvrinomaStrategyExtension extends Extension
 
     private function wireRepository(ContainerBuilder $container, Reference $doctrineRegistry, string $class): void
     {
-        $definitionRepository    = $container->getDefinition(EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.repository');
-        $definitionQueryMediator = $container->getDefinition(EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.query.mediator');
+        $definitionRepository    = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.repository');
+        $definitionQueryMediator = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.query.mediator');
         $definitionRepository->setArgument(0, $doctrineRegistry);
         $definitionRepository->setArgument(1, $class);
         $definitionRepository->setArgument(2, $definitionQueryMediator);
@@ -140,30 +140,30 @@ final class EvrinomaStrategyExtension extends Extension
 
     private function wireFactory(ContainerBuilder $container, string $class, string $paramClass): void
     {
-        $container->removeDefinition(EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.factory');
+        $container->removeDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.factory');
         $definitionFactory = new Definition($class);
         $definitionFactory->addArgument($paramClass);
-        $alias = new Alias(EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.factory');
-        $container->addDefinitions([EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.factory' => $definitionFactory]);
+        $alias = new Alias(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.factory');
+        $container->addDefinitions([DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.factory' => $definitionFactory]);
         $container->addAliases([$class => $alias]);
     }
 
     private function wireController(ContainerBuilder $container, string $class): void
     {
-        $definitionApiController = $container->getDefinition(EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.api.controller');
+        $definitionApiController = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.api.controller');
         $definitionApiController->setArgument(5, $class);
     }
 
     private function wireValidator(ContainerBuilder $container, string $class): void
     {
-        $definitionApiController = $container->getDefinition(EvrinomaStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.validator');
+        $definitionApiController = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.validator');
         $definitionApiController->setArgument(0, $class);
     }
 
 //region SECTION: Getters/Setters
     public function getAlias()
     {
-        return EvrinomaStrategyBundle::STRATEGY_BUNDLE;
+        return DemoniqusStrategyBundle::STRATEGY_BUNDLE;
     }
 //endregion Getters/Setters
 }
