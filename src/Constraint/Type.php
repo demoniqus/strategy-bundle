@@ -5,7 +5,7 @@ namespace Demoniqus\StrategyBundle\Constraint;
 
 
 use Demoniqus\StrategyBundle\Constraints\TypeStrategy;
-use Evrinoma\UtilsBundle\Constraint\ConstraintInterface;
+use Evrinoma\UtilsBundle\Constraint\Property\ConstraintInterface;
 use Symfony\Component\Validator\Constraints\NotNull;
 
 class Type implements ConstraintInterface

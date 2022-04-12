@@ -1,5 +1,6 @@
 <?php
 
+namespace Evrinoma\StrategyBundle\Controller;
 
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Evrinoma\DtoBundle\Factory\FactoryDtoInterface;

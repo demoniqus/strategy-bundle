@@ -5,9 +5,9 @@ namespace Demoniqus\StrategyBundle\Dto;
 
 
 use Evrinoma\DtoBundle\Dto\DtoInterface;
-use Evrinoma\DtoCommon\ValueObject\ActiveInterface;
-use Evrinoma\DtoCommon\ValueObject\IdInterface;
-use Evrinoma\DtoCommon\ValueObject\NameInterface;
+use Evrinoma\DtoCommon\ValueObject\Immutable\ActiveInterface;
+use Evrinoma\DtoCommon\ValueObject\Immutable\IdInterface;
+use Evrinoma\DtoCommon\ValueObject\Immutable\NameInterface;
 
 interface StrategyApiDtoInterface extends DtoInterface, IdInterface, NameInterface, ActiveInterface
 {

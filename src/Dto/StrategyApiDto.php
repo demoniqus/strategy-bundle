@@ -6,9 +6,9 @@ namespace Demoniqus\StrategyBundle\Dto;
 
 use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\DtoBundle\Dto\AbstractDto;
-use Evrinoma\DtoCommon\ValueObject\ActiveTrait;
-use Evrinoma\DtoCommon\ValueObject\IdTrait;
-use Evrinoma\DtoCommon\ValueObject\NameTrait;
+use Evrinoma\DtoCommon\ValueObject\Immutable\ActiveTrait;
+use Evrinoma\DtoCommon\ValueObject\Immutable\IdTrait;
+use Evrinoma\DtoCommon\ValueObject\Immutable\NameTrait;
 use Demoniqus\StrategyBundle\Model\ModelInterface;
 use Symfony\Component\HttpFoundation\Request;
 
