@@ -17,7 +17,7 @@ class StrategyApiDto extends AbstractDto implements StrategyApiDtoInterface
     use IdTrait, ActiveTrait, NameTrait;
 
 //region SECTION: Fields
-    private string $type;
+    private string $type = '';
 //endregion Fields
 
 //region SECTION: Constructor
