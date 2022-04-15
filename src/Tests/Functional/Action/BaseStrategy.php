@@ -6,9 +6,11 @@ namespace Demoniqus\StrategyBundle\Tests\Functional\Action;
 use Demoniqus\StrategyBundle\Dto\StrategyApiDto;
 use Demoniqus\StrategyBundle\Fixtures\Strategies\BudgetCalcByStageStrategy;
 use Demoniqus\StrategyBundle\Fixtures\Strategies\DashedEstimateGenNumberStrategy;
+use Demoniqus\StrategyBundle\Fixtures\Strategies\VirtualEstimateGenNumberStrategy;
 use Demoniqus\StrategyBundle\Tests\Functional\Helper\BaseStrategyTestTrait;
 use Demoniqus\StrategyBundle\DemoniqusStrategyBundle;
 use Demoniqus\StrategyBundle\Fixtures\Strategies\SlashedEstimateGenNumberStrategy;
+use Evrinoma\DtoBundle\Dto\DtoInterface;
 use Evrinoma\TestUtilsBundle\Action\AbstractServiceTest;
 use Evrinoma\UtilsBundle\Model\ActiveModel;
 use PHPUnit\Framework\Assert;
@@ -34,8 +36,9 @@ class BaseStrategy extends AbstractServiceTest implements BaseStrategyTestInterf
     public static function defaultData(): array
     {
         return [
-            "name"  => SlashedEstimateGenNumberStrategy::class,
+            "name"  => VirtualEstimateGenNumberStrategy::class,
             "type" => SlashedEstimateGenNumberStrategy::getType(),
+            DtoInterface::DTO_CLASS => StrategyApiDto::class,
         ];
     }
 
@@ -109,16 +112,16 @@ class BaseStrategy extends AbstractServiceTest implements BaseStrategyTestInterf
             static::getDefault(
                 [
                     'id' => $find['data']['id'],
-                    'type' => DashedEstimateGenNumberStrategy::getType(),
-                    'name' => DashedEstimateGenNumberStrategy::class
+                    'type' => VirtualEstimateGenNumberStrategy::getType(),
+                    'name' => VirtualEstimateGenNumberStrategy::class
                 ]
             )
         );
         $this->testResponseStatusOK();
 
         Assert::assertEquals($find['data']['id'], $updated['data']['id']);
-        Assert::assertEquals(DashedEstimateGenNumberStrategy::getType(), $updated['data']['type']);
-        Assert::assertEquals(DashedEstimateGenNumberStrategy::class, $updated['data']['name']);
+        Assert::assertEquals(VirtualEstimateGenNumberStrategy::getType(), $updated['data']['type']);
+        Assert::assertEquals(VirtualEstimateGenNumberStrategy::class, $updated['data']['name']);
     }
 
     public function actionPutUnprocessable(): void
