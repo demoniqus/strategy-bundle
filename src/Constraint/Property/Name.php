@@ -1,12 +1,11 @@
 <?php
 
 
-namespace Demoniqus\StrategyBundle\Constraint;
-
+namespace Demoniqus\StrategyBundle\Constraint\Property;
 
 
 use Evrinoma\UtilsBundle\Constraint\Property\ConstraintInterface;
-use Symfony\Component\Validator\Constraints\NotNull;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class Name implements ConstraintInterface
 {
@@ -14,8 +13,7 @@ class Name implements ConstraintInterface
     public function getConstraints(): array
     {
         return [
-            new NotNull(),
-            // comment
+            new NotBlank(),
         ];
     }
 

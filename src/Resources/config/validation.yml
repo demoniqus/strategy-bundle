@@ -1,2 +1,2 @@
 imports:
-  - { resource: constraint/strategy.yml }
+  - { resource: constraint/property/strategy.yml }

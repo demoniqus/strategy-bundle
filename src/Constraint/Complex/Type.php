@@ -1,12 +1,11 @@
 <?php
 
 
-namespace Demoniqus\StrategyBundle\Constraint;
+namespace Demoniqus\StrategyBundle\Constraint\Complex;
 
 
 use Demoniqus\StrategyBundle\Constraints\TypeStrategy;
-use Evrinoma\UtilsBundle\Constraint\Property\ConstraintInterface;
-use Symfony\Component\Validator\Constraints\NotNull;
+use Evrinoma\UtilsBundle\Constraint\Complex\ConstraintInterface;
 
 class Type implements ConstraintInterface
 {
@@ -14,7 +13,7 @@ class Type implements ConstraintInterface
     public function getConstraints(): array
     {
         return [
-            new NotNull(),
+            //NotNull and NotBlack constraints cannot be applied as part of complex constraint
             new TypeStrategy(),
         ];
     }

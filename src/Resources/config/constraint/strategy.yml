@@ -1,5 +1,0 @@
-services:
-  demoniqus.strategy.constraint.name:
-    class: Demoniqus\StrategyBundle\Constraint\Name
-  demoniqus.strategy.constraint.type:
-    class: Demoniqus\StrategyBundle\Constraint\Type

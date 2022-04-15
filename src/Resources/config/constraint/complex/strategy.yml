@@ -1,0 +1,3 @@
+services:
+  demoniqus.strategy.constraint.complex.type:
+    class: Demoniqus\StrategyBundle\Constraint\Complex\Type

@@ -1,0 +1,3 @@
+services:
+  demoniqus.strategy.constraint.property.name:
+    class: Demoniqus\StrategyBundle\Constraint\Property\Name
