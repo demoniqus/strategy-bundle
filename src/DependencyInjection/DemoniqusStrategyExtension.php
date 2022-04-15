@@ -39,7 +39,7 @@ final class DemoniqusStrategyExtension extends Extension
 //region SECTION: Public
     public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
 
         if ($container->getParameter('kernel.environment') !== 'prod') {
@@ -65,12 +65,12 @@ final class DemoniqusStrategyExtension extends Extension
         if (isset(self::$doctrineDrivers[$config['db_driver']])) {
             $loader->load('doctrine.yml');
             $container->setAlias(
-                DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.doctrine_registry',
+                DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.doctrine_registry',
                 new Alias(self::$doctrineDrivers[$config['db_driver']]['registry'], false)
             );
-            $doctrineRegistry = new Reference(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.doctrine_registry');
-            $container->setParameter(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.backend_type_'. $config['db_driver'], true);
-            $objectManager = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.object_manager');
+            $doctrineRegistry = new Reference(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.doctrine_registry');
+            $container->setParameter(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.backend_type_' . $config['db_driver'], true);
+            $objectManager = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.object_manager');
             $objectManager->setFactory([$doctrineRegistry, 'getManager']);
         }
 
@@ -79,8 +79,8 @@ final class DemoniqusStrategyExtension extends Extension
             $config,
             [
                 '' => [
-                    'db_driver' => DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.storage',
-                    'entity'    => DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.entity',
+                    'db_driver' => DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.storage',
+                    'entity'    => DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.entity',
                 ],
             ]
         );
@@ -96,7 +96,8 @@ final class DemoniqusStrategyExtension extends Extension
         $loader->load('validation.yml');
 
         if ($config['constraints']) {
-            $loader->load('constraint/strategy.yml');
+            $loader->load('constraint/property/' . DemoniqusStrategyBundle::STRATEGY_LC . '.yml');
+            $loader->load('constraint/complex/' . DemoniqusStrategyBundle::STRATEGY_LC . '.yml');
         }
 
         $this->wireConstraintTag($container);
@@ -107,14 +108,12 @@ final class DemoniqusStrategyExtension extends Extension
                 $config['decorates'],
                 [
                     '' => [
-                        'command' => DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.decorates.command',
-                        'query'   => DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.decorates.query',
+                        'command' => DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.decorates.command',
+                        'query'   => DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.decorates.query',
                     ],
                 ]
             );
         }
-
-
     }
 
 //endregion Public
@@ -123,8 +122,11 @@ final class DemoniqusStrategyExtension extends Extension
     {
         foreach ($container->getDefinitions() as $key => $definition) {
             switch (true) {
-                case strpos($key, StrategyPass::STRATEGY_CONSTRAINT) !== false :
-                    $definition->addTag(StrategyPass::STRATEGY_CONSTRAINT);
+                case strpos($key, StrategyPass::STRATEGY_PROPERTY_CONSTRAINT) !== false :
+                    $definition->addTag(StrategyPass::STRATEGY_PROPERTY_CONSTRAINT);
+                    break;
+                case strpos($key, StrategyPass::STRATEGY_COMPLEX_CONSTRAINT) !== false :
+                    $definition->addTag(StrategyPass::STRATEGY_COMPLEX_CONSTRAINT);
                     break;
                 default:
             }
@@ -133,8 +135,8 @@ final class DemoniqusStrategyExtension extends Extension
 
     private function wireRepository(ContainerBuilder $container, Reference $doctrineRegistry, string $class): void
     {
-        $definitionRepository    = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.repository');
-        $definitionQueryMediator = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.query.mediator');
+        $definitionRepository = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.repository');
+        $definitionQueryMediator = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.query.mediator');
         $definitionRepository->setArgument(0, $doctrineRegistry);
         $definitionRepository->setArgument(1, $class);
         $definitionRepository->setArgument(2, $definitionQueryMediator);
@@ -142,24 +144,25 @@ final class DemoniqusStrategyExtension extends Extension
 
     private function wireFactory(ContainerBuilder $container, string $class, string $paramClass): void
     {
-        $container->removeDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.factory');
+        $container->removeDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.factory');
         $definitionFactory = new Definition($class);
         $definitionFactory->addArgument($paramClass);
-        $alias = new Alias(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.factory');
-        $container->addDefinitions([DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.factory' => $definitionFactory]);
+        $alias = new Alias(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.factory');
+        $container->addDefinitions([DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.factory' => $definitionFactory]);
         $container->addAliases([$class => $alias]);
     }
 
     private function wireController(ContainerBuilder $container, string $class): void
     {
-        $definitionApiController = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.api.controller');
+        $definitionApiController = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.api.controller');
         $definitionApiController->setArgument(5, $class);
     }
 
     private function wireValidator(ContainerBuilder $container, string $class): void
     {
-        $definitionApiController = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.'.$this->getAlias().'.validator');
-        $definitionApiController->setArgument(0, $class);
+        $definitionApiController = $container->getDefinition(DemoniqusStrategyBundle::VENDOR_PREFIX . '.' . $this->getAlias() . '.validator');
+        $definitionApiController->setArgument(0, new Reference('validator'));
+        $definitionApiController->setArgument(1, $class);
     }
 
 //region SECTION: Getters/Setters
