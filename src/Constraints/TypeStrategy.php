@@ -35,6 +35,12 @@ final class TypeStrategy extends Callback
         return function ($object, ExecutionContextInterface $context, $payload) {
             /** @var AbstractStrategyInterface $object */
             $strategyName = $object->getName();
+            if (empty($strategyName)) {
+                $context->buildViolation('Expected must have name')
+                    ->atPath('type')
+                    ->addViolation();
+                return;
+            }
             /** @var StrategyInterface $strategyName */
             if ($object->getType() !== $strategyName::getType()) {
                 $context->buildViolation(sprintf('Expected argument of type "%s", "%s" given', $strategyName::getType(), $object->getType()))
