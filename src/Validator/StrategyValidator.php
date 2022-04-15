@@ -5,6 +5,7 @@ namespace Demoniqus\StrategyBundle\Validator;
 
 use Demoniqus\StrategyBundle\Entity\Strategy\BaseStrategy;
 use Evrinoma\UtilsBundle\Validator\AbstractValidator;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class StrategyValidator extends AbstractValidator
 {
@@ -13,9 +14,9 @@ class StrategyValidator extends AbstractValidator
 //endregion Fields
 
 //region SECTION: Constructor
-    public function __construct(string $entityClass)
+    public function __construct(ValidatorInterface $validator, string $entityClass)
     {
-        parent::__construct($entityClass);
+        parent::__construct($validator, $entityClass);
     }
 //endregion Constructor
 }
